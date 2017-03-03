@@ -1,0 +1,48 @@
+/* text */
+@import url('https://fonts.googleapis.com/css?family=Rubik&amp;subset=latin-ext');
+html, body {
+    font-family: Rubik, sans-serif;
+    font-size: 1em;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+@media all and (min-width: 60em) and (min-height: 37.5em) {
+    html, body { font-size: calc( 0.55vw + 0.33vh + 0.55em); }
+}
+h1, h2, h3, h4, p {
+    margin: 0;
+    padding: 0;
+}
+h1 small,
+h2 small,
+h3 small,
+h4 small {
+    display: block;
+    font-size: 66%;
+    line-height: 1;
+    margin: -0.5em 0 0 0;
+}
+p small {
+    display: block;
+    font-size: 87.5%;
+}
+p + p {
+    margin-top: 1em;
+}
+blockquote {
+    margin: 0;
+    padding: 0.625em 1.25em 0.625em 1.875em;
+    border-left: 0.625em solid var(--main-color);
+    font-style: italic;
+}
+blockquote[cite]:after {
+    content: '\2014 \2009'attr(cite);
+    display: block;
+    font-size: 87.5%;
+}
+pre {
+    background: var(--light-color);
+    border-radius: var(--border-radius);
+    padding: 0.3125em 0.625em;
+    overflow-x: auto;
+}

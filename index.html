@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>micro.css</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- - - ><link rel="stylesheet" href="micro.css"><!- - -->
+<!-- --><link rel="stylesheet" href="src/base.css"><!-- -->
+<style>
+/* minimal customisation (works only with CSS-variable support) */
+html {
+    --main-color: #30D;
+    --main-color-dark: #20C;
+    --main-text-color: #FFF;
+}
+html { border-top: 0.2em solid var(--main-color); }
+</style>
+</head>
+<body>
+<header>
+    <svg class="logo" xmlns="http://www.w3.org/2000/svg" width="60px" height="60px" viewbox="0 0 24 24" fill="#30D"><path id="mm" d="M20.208,7.087L16.87,3.75l-0.177,0.177l0,0L15.28,5.34l0,0l-0.177,0.177l0.707,0.707l-1.074,1.074l1.414,1.414l1.074-1.074 l1.216,1.216c1.353,1.353,1.423,3.484,0.155,4.752c-1.267,1.266-3.399,1.196-4.752-0.156l-1.216-1.216l2.522-2.522l-1.414-1.414 l-2.522,2.522l-0.707-0.707l-1.478,1.478l-0.29,0.29l-1.71,1.71c-0.391-0.391-1.024-0.391-1.414,0l-2.893,2.893 c-0.391,0.391-0.391,1.024,0,1.414l-0.714,0.688L3.422,20l0.714-0.688c0.391,0.391,1.024,0.391,1.414,0l2.893-2.893 c0.391-0.391,0.391-1.024,0-1.414l1.71-1.71l1.923,1.923c0.001,0.001,0.002,0.002,0.003,0.003c1.155,1.155,2.676,1.791,4.284,1.79 c1.523,0,2.944-0.582,4-1.637C22.605,13.132,22.535,9.414,20.208,7.087z"></path></svg>
+    <h1>micro.css <small>CSS micro framework</small></h1>
+    <nav>
+        <input type="checkbox" id="nav-1-open">
+        <label for="nav-1-open"></label>
+        <ul>
+            <li><a href="#fonts">Fonts</a></li>
+            <li><a href="#grid">Grid</a></li>
+            <li><a href="#images">Images</a></li>
+            <li><a href="#table">Tables</a></li>
+            <li><a href="#accordion">Accordion</a></li>
+            <li><a href="#tabs">Tabs</a></li>
+            <li><a href="#forms">Forms &amp; Buttons</a></li>
+            <li><a href="#paging">Paging</a></li>
+            <li><a href="#progress">Progress &amp; Waiting</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <article>
+        <div class="cell">
+            <p>This minimal CSS framework is by no means complete. It is meant to be extended, partially replaced or used as a learning example for the following features:</p>
+            <ul>
+                <li>Lightweight</li>
+                <li>Responsive</li>
+                <li>Modular</li>
+                <li>Extendable</li>
+                <li>Themeable with CSS variables (requires postCSS or a modern browser)</li>
+            </ul>
+            <p>It is not using a CSS reset or normalize, as that would interfere with normal browser styles and reduce interoperability with other CSS modules.</p>
+        </div>
+    </article>
+    <article id="fonts">
+        <div class="cell"><h2>Fonts</h2></div>
+        <div class="cell">
+            <p>Feel free to add your own <a href="https://fonts.google.com/" target="_blank">fonts</a>, in normal, <em>italic</em> and <strong>bold</strong> faces as you please. Scale up the window to see the responsiveness of the font inclusion in browsers with support for <code>calc</code>.</p>
+            <h1>Most important Headline</h1>
+            <h2>Secondary Headline</h2>
+            <h3>Less important Header</h3>
+            <h4>Least important Heading</h4>
+            <p>This paragraph tells you that h5 and h6 were intentionally left out; if you cannot do with 4 levels of headlines, maybe better do it in a different way.</p>
+            <blockquote cite="Unknown developer">"Encodings. Why did it have to be Encodings?"</blockquote>
+            <pre>
+(function() {
+    var variable = 'this will not leak into the global scope';
+})()</pre>
+        </div>
+    </article>
+    <article id="grid">
+        <div class="cell"><h2>Grid</h2></div>
+        <div class="cell">
+            <p>The grid uses flexbox (without flex-wrap) to allow for flexible layouts in <a href="http://caniuse.com/#search=flexbox" target="_blank">modern browsers</a> (Chrome 4+, Firefox2+, MSIE10+, Edge, Opera 12+, Safari 3.1+, Android 2+). It has 3 breakpoints: L 960+, M 640-960 and S 640-.</p>
+        </div>
+        <div class="l-row">
+            <div class="l-row m-row">
+                <div class="l-row m-row s-row"><div class="box centered">1</div><div class="box centered">2</div><div class="box centered">3</div></div>
+                <div class="l-row m-row s-row"><div class="box centered">4</div><div class="box centered">5</div><div class="box centered">6</div></div>
+            </div>
+            <div class="l-row m-row">
+                <div class="l-row m-row s-row"><div class="box centered">7</div><div class="box centered">8</div><div class="box centered">9</div></div>
+                <div class="l-row m-row s-row"><div class="box centered">10</div><div class="box centered">11</div><div class="box centered">12</div></div>
+            </div>
+        </div>
+        <div class="l-row">
+            <div class="l-row m-row">
+                <div class="l-row m-row s-row"><div class="box centered">1</div><div class="box centered">2</div></div>
+                <div class="l-row m-row s-row"><div class="box centered">3</div><div class="box centered">4</div></div>
+            </div>
+            <div class="l-row m-row">
+                <div class="l-row m-row s-row"><div class="box centered">5</div><div class="box centered">6</div></div>
+                <div class="l-row m-row s-row"><div class="box centered">7</div><div class="box centered">8</div></div>
+            </div>
+        </div>
+        <div class="l-row">
+            <div class="l-row m-row">
+                <div class="box centered">1</div>
+                <div class="box centered">2</div>
+            </div>
+            <div class="l-row m-row">
+                <div class="box centered">3</div>
+                <div class="box centered">4</div>
+            </div>
+        </div>
+        <div class="l-row m-row">
+            <div class="box centered">1</div>
+            <div class="box centered">2</div>
+            <div class="box centered">3</div>
+        </div>
+        <div class="l-row m-row">
+            <div class="box centered">1</div>
+            <div class="box centered">2</div>
+        </div>
+        <div class="l-row m-row">
+            <div class="row">
+                <div class="box centered">1</div>
+                <div class="box centered">1½</div>
+            </div>
+            <div>
+                <div class="box centered">2</div>
+            </div>
+        </div>
+        <div class="cell">
+            <p>Other browsers will show the content one cell / box below another, so it's degrading more or less gracefully - the page will not be as beautiful, but it should be still usable. The grid works by using the classes <code>row</code>/<code>col</code> (or prefixed with the respective breakpoint, like <code>l-row</code>) for the grouping and <code>cell</code> or <code>box</code> for the content.</p>
+            <p>There is also a module that allows similar layouts using <code>display: table(-cell)</code> which uses more markup and is more difficult to use, but is supported even by older browsers.</p>
+        </div>
+    </article>
+    <article id="images">
+        <div class="cell"><h2>Images</h2></div>
+        <div class="cell">
+            <p>The following image will fill the width of the relative parent:</p><svg class="full" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 960 30"><rect x="0" y="0" width="960" height="30" fill="#30D"/><use xlink:href="#mm" fill="#FFF" transform="translate(480 2)"/></svg>
+        </div>
+        <div class="cell">
+            <svg class="left s-full" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 300 120" width="300px" height="120px"><rect x="0" y="0" width="300" height="120" fill="#30D"/><use xlink:href="#mm" fill="#FFF" transform="translate(130 32) scale(2)"/></svg>
+            <p>The image to the left will scale to full size in mobile viewports and otherwise will retain its original size. It will otherwise float on the left side, displacing content as the browser sees fit. <code>article</code> containers (both with the tag or the WAI ARIA role) will clear the floating, thus allowing you to use floated images without displacing the subsequent content.</p>
+        </div>
+        <div class="cell">
+            <svg class="right quarter m-third s-half" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 300 80" width="300px" height="80px"><rect x="0" y="0" width="300" height="80" fill="#30D"/><use xlink:href="#mm" fill="#FFF" transform="translate(130 18) scale(2)"/></svg>
+            <p>The Image on the right will adjust itself to a quarter of the available space in displays bigger than 960px, a third in those bigger than 640px and half below that. The classes <code>left</code>, <code>right</code>, <code>full</code>, <code>half</code>, <code>third</code> and <code>quarter</code> allow for flexible image formatting that will work for all your tags including <code>img</code>, <code>svg</code>, <code>video</code>, <code>object</code>/<code>embed</code> and <code>picture</code>.</p>
+            <p>Be sure to include an <code>alt</code>-attribute in all your <code>img</code>-tags and may your code always be valid.</p>
+        </div>
+    </article>
+    <article id="table">
+        <div class="cell"><h2>Tables</h2></div>
+        <div class="cell">
+            <p>The following table will break the content instead of changing its layout:</p>
+        </div>
+        <div class="cell">
+            <table>
+                <thead>
+                    <tr><th>Header 1</th><th>Header 2</th><th>Header 3</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Value 1</td><td>Value 1</td><td>Value 1</td></tr>
+                    <tr><td>Value 2</td><td>Value 2</td><td>Value 2</td></tr>
+                    <tr><td>Value 3</td><td>Value 3</td><td>Value 3</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="cell">
+            <p>This table will change into a linear view on the smartphone-breakpoint - this requires all cells to have a data-th attribute with the content of their corresponding th element:</p>
+        </div>
+        <div class="cell">
+            <table class="responsive full">
+                <thead>
+                    <tr><th>Header 1</th><th>Header 2</th><th>Header 3</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-th="Header 1">Value 1 is longer so it makes no sense from a smartphone perspective to put this in a table cell</td><td data-th="Header 2">Value 1 is longer so it makes no sense from a smartphone perspective to put this in a table cell</td><td data-th="Header 3">Value 1 is longer so it makes no sense from a smartphone perspective to put this in a table cell</td></tr>
+                    <tr><td data-th="Header 1">Value 2</td><td data-th="Header 2">Value 2</td><td data-th="Header 3">Value 2</td></tr>
+                    <tr><td data-th="Header 1">Value 3</td><td data-th="Header 2">Value 3</td><td data-th="Header 3">Value 3</td></tr>
+                    <tr><td data-th="Header 1">Value 4</td><td data-th="Header 2">Value 4</td><td data-th="Header 3">Value 4</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+    <article id="accordion">
+        <div class="cell"><h2>Accordion</h2></div>
+        <div class="accordion cell">
+            <input type="checkbox" id="accordion1" checked aria-hidden="true">
+            <div><label for="accordion1"><h3>Accordion Header (initially open)</h3></label></div>
+            <div><p>Accordion content that is initially visible.</p></div>
+        </div>
+        <div class="accordion cell">
+            <input type="checkbox" id="accordion2" aria-hidden="true">
+            <div><label for="accordion2"><h3>Accordion Header (initially closed)</h3></label></div>
+            <div><p>Accordion content that is initially invisible.</p></div>
+        </div>
+    </article>
+    <article id="tabs">
+        <div class="cell"><h2>Tabs</h2></div>
+        <div class="tabs cell">
+            <input type="radio" name="tab-1" id="tab1-1" checked aria-hidden="true">
+            <input type="radio" name="tab-1" id="tab1-2" aria-hidden="true">
+            <input type="radio" name="tab-1" id="tab1-3" aria-hidden="true">
+            <input type="radio" name="tab-1" id="tab1-4" aria-hidden="true">
+            <ul>
+                <li><label for="tab1-1" aria-hidden="true">Tab 1</label></li>
+                <li><label for="tab1-2" aria-hidden="true">Tab 2</label></li>
+                <li><label for="tab1-3" aria-hidden="true">Tab 3</label></li>
+                <li><label for="tab1-4" aria-hidden="true">Tab 4 with more Text</label></li>
+            </ul>
+            <div>Tab 1 Content</div>
+            <div>Tab 2 Content</div>
+            <div>Tab 3 Content</div>
+            <div>Tab 4 Content</div>
+        </div>
+    </article>
+    <article id="forms">
+        <div class="cell"><h2>Forms &amp; Buttons</h2></div>
+        <div class="cell"><form action="#" method="post">
+            <fieldset>
+                <p><label for="firstname">First Name</label><input id="firstname" name="firstname" type="text" pattern="(\w\w+)(\s\w+)*" required></p>
+                <p><label for="midname">Middle Name</label><input id="midname" name="midname" type="text" pattern="(\w\w+)(\s\w+)*"></p>
+                <p><label for="lastname">Last Name</label><input id="lastname" name="lastname" type="text" pattern="(\w\w+)(\s\w+)*" required></p>
+            </fieldset>
+            <fieldset>
+                <p class="max"><label for="street">Street</label><input id="street" name="street" type="text" pattern="(\w\w+)(\s\w+)*" required></p>
+                <p class="min"><label for="streetno">No.</label><input id="streetno" name="streetno" type="text" pattern="(\w\w+)(\s\w+)*" required></p>
+            </fieldset>
+            <fieldset>
+                <p class="min"><label for="zip">ZIP</label><input id="zip" name="zip" type="text" pattern="\d{5}" required></p>
+                <p class="max"><label for="city">City</label><input id="city" name="city" type="text" pattern="(\w\w+)(\s\w+)*" required></p>
+            </fieldset>
+            <p><label for="select">Select</label><select name="select" id="select"><option>Option A</option><option>Option B</option><option>Option C</option><option>Option D</option></select></p>
+            <fieldset class="s-line">
+                <legend>Checkboxes</legend>
+                <p><input type="checkbox" id="fielda" name="fielda"><label for="fielda">Option A</label></p>
+                <p><input type="checkbox" id="fieldb" name="fieldb"><label for="fieldb">Option B</label></p>
+                <p><input type="checkbox" id="fieldc" name="fieldc"><label for="fieldc">Option C</label></p>
+                <p><input type="checkbox" id="fieldd" name="fieldd"><label for="fieldd">Option D</label></p>
+            </fieldset>
+            <fieldset>
+                <legend>Radio Buttons</legend>
+                <p><input type="radio" id="radioa" name="radio"><label for="radioa">Option A</label></p>
+                <p><input type="radio" id="radiob" name="radio"><label for="radiob">Option B</label></p>
+                <p><input type="radio" id="radioc" name="radio"><label for="radioc">Option C</label></p>
+                <p><input type="radio" id="radiod" name="radio"><label for="radiod">Option D</label></p>
+            </fieldset>
+            <p><label for="textarea">Textarea</label><textarea id="textarea" name="textarea">This is a textarea</textarea></p>
+            <p class="right"><a href="#" role="button" class="ghost">Cancel</a> <button type="reset" class="ghost">Reset</button> <button type="submit">Submit</button></p>
+        </form></div>
+    </article>
+    <article id="paging">
+        <div class="cell"><h2>Paging</h2></div>
+        <div class="cell"><ol class="paging">
+            <li><a href="#back" role="button" rel="prev">Back</a></li>
+            <li><a href="#1" role="button" class="active">1</a></li>
+            <li><a href="#2" role="button">2</a></li>
+            <li><a href="#3" role="button">3</a></li>
+            <li class="s-hide"><a href="#4" role="button">4</a></li>
+            <li class="s-hide"><a href="#5" role="button">5</a></li>
+            <li><a href="#next" role="button" rel="next">Next</a></li>
+        </ol></div>
+    </article>
+    <article id="message">
+        <div class="cell"><h2>Messages</h2></div>
+        <div class="cell">
+            <div class="error message"><p><strong>This is an important error!</strong><br>Whatever you tried, it went horribly wrong.</p></div>
+        </div>
+        <div class="cell">
+            <div class="info message"><p><strong>This is a helpful information;</strong><br>So be sure to read it in its entirety.</p></div>
+        </div>
+        <div class="cell">
+            <div class="success message"><p><strong>You did it!</strong><br>You got me to display a message of your success. I hope you enjoy it.</p></div>
+        </div>
+        <div class="cell">
+            <p>Messages are relatively simple; you can use them to communicate errors, informations or success either in multiple (use <code>br</code> tags) or single lines. Every container inside the message behaves like a table cell.</p>
+        </div>
+        <div class="cell">
+            <p>Inside <code>form</code> tags, messages are smaller to better integrate between the fields:</p>
+        </div>
+        <div class="cell">
+            <form action="#" method="post">
+                <p class="error"><label for="form-error">This field is invalid</label><input type="text" id="form-error" name="form-error" value="wrong value"></p>
+                <p class="error message"><span><strong>This is an error inside a form tag.</strong></span></p>
+            </form>
+        </div>
+    </article>
+    <article id="progress">
+        <div class="cell"><h2>Progress &amp; Waiting</h2></div>
+        <div class="cell">
+            <p>Progress 0%</p>
+            <progress value="0" max="100"></progress>
+            <p>Progress 50%</p>
+            <progress value="50" max="100"></progress>
+            <p>Progress 100%</p>
+            <progress value="100" max="100"></progress>
+        </div>
+        <div class="cell"><p>Waiting:</p>
+        <div class="cell wait">
+        </div>
+    </article>
+</main>
+<footer class="centered cell">
+    &copy; 2016-17 Alex Lohr
+</footer>
+</body>
+</html>

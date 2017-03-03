@@ -1,0 +1,11 @@
+/* hidden input */
+.accordion > input[type="checkbox"],
+.accordion > input[type="radio"],
+.tabs > input[type="checkbox"],
+.tabs > input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    width: 0.1em;
+    height: 0.1em;
+}

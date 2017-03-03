@@ -1,0 +1,40 @@
+/* message */
+.message {
+    color: var(--inverted-color);
+    display: table;
+    width: 100%;
+    border-radius: var(--border-radius);
+}
+.message > * {
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+    padding: 0.5em;
+}
+.message:before {
+    font-size: 2em;
+    display: table-cell;
+    padding: 0 0.125em 0 0.5em;
+    vertical-align: middle;
+}
+.error.message { background: var(--error-color); }
+.info.message { background: var(--info-color); }
+.success.message { background: var(--success-color); }
+.error.message:before { content: "\26A0"; }
+.info.message:before { content: "\24D8"; }
+.success.message:before { content: "\2714"; }
+form .message[class] {
+    padding-bottom: 0;
+    margin: -0.25rem 0 0.25rem 0;
+    background: transparent;
+}
+form .error.message { color: var(--error-color); }
+form .info.message { color: var(--info-color); }
+form .success.message { color: var(--success-color); }
+form .message > * {
+    padding: 0.25rem;
+}
+form .message:before {
+    font-size: 1.2rem;
+    padding: 0 0.075rem 0 0.5rem;
+}

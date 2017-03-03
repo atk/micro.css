@@ -1,0 +1,21 @@
+/* accordion */
+.accordion > input[type="checkbox"]:first-child:not(:checked) + * + * {
+    display: none;
+}
+.accordion > input[type="checkbox"]:first-child + * label:before {
+    content: "\23F7";
+    float: right;
+    margin-left: 0.625em;
+    font-size: inherit;
+}
+.accordion > input[type="checkbox"]:checked:first-child + * label:before {
+    content: "\23F6";
+}
+.accordion > input[type="checkbox"]:first-child + * label {
+    display: block;
+    cursor: pointer;
+}
+.accordion > input[type="checkbox"]:first-child + * label:hover,
+.accordion > input[type="checkbox"]:first-child + * label:hover:before {
+    color: var(--text-color-light);
+}

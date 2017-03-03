@@ -1,0 +1,61 @@
+/* navigation */
+nav > input[type="checkbox"][type] + label,
+[role="navigation"] > input[type="checkbox"][type] + label {
+    position: absolute;
+    top: 1.5em;
+    right: 0;
+    z-index: 99;
+}
+nav > input[type="checkbox"][type] + label:before,
+[role="navigation"] > input[type="checkbox"][type] + label:before {
+    content: "\2630";
+    color: var(--text-color);
+    font-size: 1.625em;
+    font-weight: 700;
+    border: none;
+}
+nav > input[type="checkbox"][type]:checked + label:before,
+[role="navigation"] > input[type="checkbox"][type]:checked + label:before {
+    content: "\2715";
+    font-weight: 400;
+    color: transparent;
+    text-shadow: var(--text-color-medium) 0 0;
+}
+nav > input[type="checkbox"]:not(:checked) ~ ul,
+[role="navigation"] > input[type="checkbox"]:not(:checked) ~ ul {
+    display: none;
+}
+nav > ul, [role="navigation"] > ul {
+    list-style: none;
+    display: block;
+    position: relative;
+    padding: 0.625em 0;
+    margin: 0 -1.25em 0 0;
+    clear: left;
+    border-bottom: 0.0625em solid var(--border-color);
+}
+nav li li, [role="navigation"] li li {
+    padding-left: 1.875em;
+}
+nav a, [role="navigation"] a {
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+}
+nav a:before, [role="navigation"] a:before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 0.5em solid;
+    margin-bottom: -0.1em;
+    border-color: transparent transparent transparent var(--text-color-light);
+}
+nav a:hover, nav a.active,
+[role="navigation"] a:hover, [role="navigation"] a.active {
+    font-weight: 700;
+}
+nav a:hover:before, nav a.active:before,
+[role="navigation"] a:hover:before, [role="navigation"] a.active:before {
+    border-left-color: var(--main-color);
+}

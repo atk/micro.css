@@ -1,0 +1,17 @@
+/* configuration */
+:root {
+    --text-color: #333;
+    --text-color-medium: #666;
+    --text-color-light: #999;
+    --main-color: #CCC;
+    --main-color-dark: #999;
+    --main-text-color: #333;
+    --border-color: #CCC;
+    --light-color: #EEE;
+    --inverted-color: #FFF;
+    --info-color: #666;
+    --error-color: #B00;
+    --success-color: #090;
+    --border-radius: 0.3125em;
+    --border-radius-small: 0.1675em;
+}

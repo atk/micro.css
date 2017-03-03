@@ -1,0 +1,31 @@
+/* button */
+button,
+[role="button"],
+button[type]:active,
+[role="button"][role]:active,
+button[type].active,
+[role="button"][role].active {
+    display: inline-block;
+    border-radius: var(--border-radius);
+    border: 0.0625em solid var(--main-color);
+    background-color: var(--main-color);
+    padding: 0.3125em 0.625em;
+    color: var(--main-text-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: inherit;
+    line-height: inherit;
+    cursor: pointer;
+    min-width: 2.25em;
+    text-align: center;
+}
+button.ghost, [role="button"].ghost, .paging [role="button"] {
+    background-color: transparent;
+    color: var(--main-color);
+}
+button:hover, [role="button"]:hover,
+button:focus, [role="button"]:focus {
+    border-color: var(--main-color-dark);
+    background-color: var(--main-color-dark);
+    color: var(--main-text-color);
+}

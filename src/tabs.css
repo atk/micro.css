@@ -1,0 +1,43 @@
+/* tabs */
+.tabs {
+    position: relative;
+    overflow: hidden;
+}
+.tabs > ul {
+    margin: 0 0 0.625em 0;
+    padding: 0;
+    border-bottom: 0.0625em solid var(--border-color);
+}
+.tabs > ul > li {
+    display: inline;
+}
+.tabs > ul > li > label {
+    display: inline-block;
+    padding: 0.3125em 0.625em;
+    margin: 0 0 -0.03125em 0;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    border: 0.0625em solid var(--border-color);
+    border-color: var(--border-color) var(--border-color) transparent var(--border-color);
+    cursor: pointer;
+}
+.tabs > ul > li > label:hover {
+    background-color: var(--main-color);
+    border-color: var(--main-color) var(--main-color) transparent var(--main-color);
+    color: var(--main-text-color);
+}
+.tabs > div {
+    display: none;
+}
+/* edit to reflect maximum tab count */
+:nth-of-type(1), :nth-of-type(2), :nth-of-type(3), :nth-of-type(4), :nth-of-type(5), :nth-of-type(6), :nth-of-type(7), :nth-of-type(8) {
+    @nest .tabs > input[type="radio"]:checked& ~ ul:first-of-type > li& label {
+        font-weight: 700;
+        background-color: var(--main-color);
+        border-color: var(--main-color) var(--main-color) transparent var(--main-color);
+        color: var(--main-text-color);
+    }
+    @nest .tabs > input[type="radio"]:checked& ~ div& {
+	display: block;
+    }
+}
+

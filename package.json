@@ -1,0 +1,23 @@
+{
+    "name": "micro.css",
+    "version": "0.0.1beta",
+    "description": "minimal CSS framework",
+    "keywords": ["css", "framework", "minimal", "small", "components", "simple"],
+    "engines": { "node": ">=0.12" },
+    "author": {
+        "name": "Alex Lohr",
+        "email": "alexthkloss@web.de"
+    },
+    "license": "MIT",
+    "private": true,
+    "dependencies": {
+        "postcss": "latest",
+        "postcss-import": "latest",
+        "postcss-cssnext": "latest",
+        "postcss-nested": "latest",
+	"csso": "latest"
+    },
+    "scripts": {
+        "install": "node build.js"
+    }
+}

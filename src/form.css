@@ -1,0 +1,136 @@
+/* form */
+form {
+    max-width: 40em;
+}
+form > p {
+    padding-bottom: 0.625em;
+}
+form > fieldset > p {
+    padding-bottom: 0.625em;
+}
+form > fieldset > p:nth-last-of-type(2):first-of-type,
+form > fieldset > p:nth-last-of-type(2):first-of-type + p {
+    width: 20em;
+    max-width: 50%;
+}
+form > fieldset > p:nth-last-of-type(3):first-of-type,
+form > fieldset > p:nth-last-of-type(3):first-of-type ~ p {
+    width: 13.34em;
+    max-width: 33.3%;
+}
+form > fieldset > p:nth-last-of-type(4):first-of-type,
+form > fieldset > p:nth-last-of-type(4):first-of-type ~ p {
+    width: 10em;
+    max-width: 25%;
+}
+form > fieldset > p.max[class][class] {
+    width: 26.67em;
+    max-width: 66%;
+}
+form > fieldset > p.min[class][class] {
+    width: 13.34em;
+    max-width: 33%;
+}
+
+@media all and (max-width: 39.9999em) {
+    form > fieldset > p:nth-last-of-type(3):first-of-type,
+    form > fieldset > p:nth-last-of-type(3):first-of-type ~ p,
+    form > fieldset > p:nth-last-of-type(4):first-of-type,
+    form > fieldset > p:nth-last-of-type(4):first-of-type ~ p {
+        float: left;
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+    }
+}
+fieldset {
+    display: table;
+    border: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+fieldset > * {
+    display: table-cell;
+}
+fieldset > legend {
+    display: table-caption;
+}
+fieldset > p + p {
+    padding-left: 1.25em;
+}
+input, select, textarea {
+    display: inline-block;
+    width: 100%;
+    padding: 0.625em;
+    border-radius: var(--border-radius);
+    border: 0.0625em solid var(--border-color);
+    font-family: inherit;
+    font-size: inherit;
+    box-shadow: none;
+    outline: none;
+}
+select::-ms-expand {
+    font-size: 90%;
+    margin: -0.7em -0.7em -0.7em 0.7em;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+.error input, .error select, .error textarea,
+.error input[type="checkbox"] + label:before,
+.error input[type="radio"] + label:before{
+    border-color: var(--error-color);
+}
+.error label {
+    color: var(--error-color);
+}
+input:focus, select:focus, textarea:focus {
+    border-color: var(--main-color-dark);
+}
+input[type="checkbox"],
+input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    width: 0.1em;
+    height: 0.1em;
+}
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+    display: block;
+    padding: 0.625em 0 0.3125em 0;
+}
+input[type="checkbox"] + label:before {
+    content: "✗";
+    font-weight: 700;
+    color: transparent;
+    width: 2.125rem;
+    height: 2.125rem;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    text-align: center;
+    margin: -0.3125rem 0.625rem 0.3125rem 0;
+    float: left;
+    border-radius: var(--border-radius);
+    border: 0.0625rem solid var(--border-color);
+}
+input[type="radio"] + label:before {
+    content: "●";
+    color: transparent;
+    width: 2.125rem;
+    height: 2.125rem;
+    font-size: 2rem;
+    line-height: 1.875rem;
+    text-align: center;
+    margin: -0.3125rem 0.625rem 0.3125rem 0;
+    float: left;
+    border-radius: 50%;
+    border: 0.0625rem solid var(--border-color);
+}
+input[type="checkbox"]:checked + label:before,
+input[type="radio"]:checked + label:before {
+    color: var(--text-color);
+}
+input[type="checkbox"]:focus + label:before,
+input[type="radio"]:focus + label:before {
+    border-color: var(--main-color-dark);
+}

@@ -1,0 +1,17 @@
+/* defaults */
+html {
+    margin: 0;
+    padding: 0;
+}
+body {
+    max-width: 60rem;
+    min-width: 50vw;
+    margin: 0 auto;
+    padding: 0 0 1.25em 0;
+}
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+a img { border: 0; }

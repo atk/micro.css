@@ -1,0 +1,240 @@
+/* grid - table version */
+.row { display: table; width: 100%; table-layout: fixed; }
+.row > * { display: table-cell; }
+.hide { display: none; }
+.cell[class] {
+    padding: 1.25em 0.625em 0 0.625em;
+}
+.box {
+    padding: 1.875em 1.25em 0.625em 1.25em;
+    position: relative;
+}
+.box:before {
+    content: "";
+    border-radius: var(--border-radius);
+    background-color: var(--light-color);
+    position: absolute;
+    top: 1.25em;
+    left: 0.625em;
+    right: 0.625em;
+    bottom: 0em;
+    z-index: -1;
+}
+.centered {
+    text-align: center;
+}
+.righted {
+    text-align: right;
+}
+@media all and (min-width: 60em) {
+    .l-row { display: table; width: 100%; table-layout: fixed; }
+    .l-row > * { display: table-cell; }
+    .l-hide { display: none; }
+    .l-cell[class] {
+        padding: 1.25em 0.625em 0 0.625em;
+    }
+    .l-box {
+        padding: 1.875em 1.25em 0.625em 1.25em;
+        position: relative;
+    }
+    .l-box:before {
+        content: "";
+        border-radius: var(--border-radius);
+        background-color: var(--light-color);
+        position: absolute;
+        top: 1.25em;
+        left: 0.625em;
+        right: 0.625em;
+        bottom: 0em;
+        z-index: -1;
+    }
+    .l-centered {
+        text-align: center;
+    }
+    .l-righted {
+        text-align: right;
+    }
+}
+@media all and (min-width: 40em) and (max-width: 59.9999em) {
+    .m-row { display: table; width: 100%; table-layout: fixed; }
+    .m-row > * { display: table-cell; }
+    .m-hide { display: none; }
+    .m-cell[class] {
+        padding: 1.25em 0.625em 0 0.625em;
+    }
+    .m-box {
+        padding: 1.875em 1.25em 0.625em 1.25em;
+        position: relative;
+    }
+    .m-box:before {
+        content: "";
+        border-radius: var(--border-radius);
+        background-color: var(--light-color);
+        position: absolute;
+        top: 1.25em;
+        left: 0.625em;
+        right: 0.625em;
+        bottom: 0em;
+        z-index: -1;
+    }
+    .m-centered {
+        text-align: center;
+    }
+    .m-righted {
+        text-align: right;
+    }
+}
+@media all and (max-width: 39.9999em) {
+    .s-row { display: table; width: 100%; table-layout: fixed; }
+    .s-row > * { display: table-cell; }
+    .s-hide { display: none; }
+    .s-cell[class] {
+        padding: 1.25em 0.625em 0 0.625em;
+    }
+    .s-box {
+        padding: 1.875em 1.25em 0.625em 1.25em;
+        position: relative;
+    }
+    .s-box:before {
+        content: "";
+        border-radius: var(--border-radius);
+        background-color: var(--light-color);
+        position: absolute;
+        top: 1.25em;
+        left: 0.625em;
+        right: 0.625em;
+        bottom: 0em;
+        z-index: -1;
+    }
+    .s-centered {
+        text-align: center;
+    }
+    .s-righted {
+        text-align: right;
+    }
+}
+/*
+    To achieve the same effect as the flexbox grid, the following markup is required:
+
+    <div class="l-row centered">
+        <div class="m-row">
+            <div>
+                <div class="l-row m-row">
+                    <div>
+                        <div class="row">
+                            <div class="box">1</div>
+                            <div class="box">2</div>
+                            <div class="box">3</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="row">
+                            <div class="box">4</div>
+                            <div class="box">5</div>
+                            <div class="box">6</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="m-row">
+            <div>
+                <div class="l-row m-row">
+                    <div>
+                        <div class="row">
+                            <div class="box">7</div>
+                            <div class="box">8</div>
+                            <div class="box">9</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="row">
+                            <div class="box">10</div>
+                            <div class="box">11</div>
+                            <div class="box">12</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="l-row centered">
+        <div class="m-row">
+            <div>
+                <div class="l-row m-row">
+                    <div>
+                        <div class="row">
+                            <div class="box">1</div>
+                            <div class="box">2</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="row">
+                            <div class="box">3</div>
+                            <div class="box">4</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="m-row">
+            <div>
+                <div class="l-row m-row">
+                    <div>
+                        <div class="row">
+                            <div class="box">5</div>
+                            <div class="box">6</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="row">
+                            <div class="box">7</div>
+                            <div class="box">8</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="l-row centered">
+        <div class="m-row">
+            <div>
+                <div class="l-row m-row">
+                    <div class="box">1</div>
+                    <div class="box">2</div>
+                </div>
+            </div>
+        </div>
+        <div class="m-row">
+            <div>
+                <div class="l-row m-row">
+                    <div class="box">3</div>
+                    <div class="box">4</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="l-row m-row centered">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+
+    <div class="l-row m-row centered">
+        <div class="box">1</div>
+        <div class="box">2</div>
+    </div>
+
+    <div class="l-row m-row centered">
+        <div>
+            <div class="row">
+                <div class="box">1</div>
+                <div class="box">1½</div>
+            </div>
+        </div>
+        <div class="box">2</div>
+    </div>
+*/

@@ -1,0 +1,21 @@
+/* layout */
+header, [role="header"] {
+    display: block;
+    position: relative;
+    padding: 1.25em 1.875em 0 0.625em;
+}
+header > img:first-child,
+header > svg:first-child,
+[role="header"] > img:first-child,
+[role="header"] > svg:first-child {
+    float: left;
+    margin: 0.625em 0.625em 0 0;
+}
+main, [role="main"],
+footer, [role="footer"] {
+    display: block;
+    position: relative;
+}
+article, [role="article"] {
+    clear: both;
+}

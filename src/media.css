@@ -1,0 +1,100 @@
+/* media */
+.left {
+    float: left;
+    margin: 0 0.625em 0.625em 0;
+}
+.right {
+    float: right;
+    margin: 0 0 0.625em 0.625em;
+}
+.full {
+    float: none;
+    width: 100%;
+    height: auto;
+}
+.half {
+    width: 50%;
+    height: auto;
+}
+.third {
+    width: 33.33%;
+    height: auto;
+}
+.quarter {
+    width: 25%;
+    height: auto;
+}
+@media all and (min-width: 60em) {
+    .l-left {
+        float: left;
+    }
+    .l-right {
+        float: right;
+    }
+    .l-full {
+        float: none;
+        width: 100%;
+        height: auto;
+    }
+    .l-half {
+        width: 50%;
+        height: auto;
+    }
+    .l-third {
+        width: 33.33%;
+        height: auto;
+    }
+    .l-quarter {
+        width: 33.33%;
+        height: auto;
+    }
+}
+@media all and (min-width: 40em) and (max-width: 59.9999em) {
+    .m-left {
+        float: left;
+    }
+    .m-right {
+        float: right;
+    }
+    .m-full {
+        float: none;
+        width: 100%;
+        height: auto;
+    }
+    .m-half {
+        width: 50%;
+        height: auto;
+    }
+    .m-third {
+        width: 33.33%;
+        height: auto;
+    }
+    .m-quarter {
+        width: 33.33%;
+        height: auto;
+    }
+}
+@media all and (max-width: 39.9999em) {
+    .s-left {
+        float: left;
+    }
+    .s-right {
+        float: right;
+    }
+    .s-full {
+        width: 100%;
+        height: auto;
+    }
+    .s-half {
+        width: 50%;
+        height: auto;
+    }
+    .s-third {
+        width: 33.33%;
+        height: auto;
+    }
+    .s-quarter {
+        width: 33.33%;
+        height: auto;
+    }
+}

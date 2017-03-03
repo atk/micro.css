@@ -1,0 +1,20 @@
+/* paging */
+ol.paging, .paging > li {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0.3125em 0;
+}
+.paging li + li [role="button"] {
+    margin-left: 0.25em;
+}
+.paging [rel="prev"]:before {
+    content: "\2770";
+    display: inline-block;
+    margin-right: 0.625em;
+}
+.paging [rel="next"]:after {
+    content: "\2771";
+    display: inline-block;
+    margin-left: 0.625em;
+}
